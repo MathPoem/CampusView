@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    color: antiquewhite;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headerPanelBtn {
+    display: flex;
+    flex-shrink: 1;
+    width: 900px;
+    height: 70px;
+    margin-top: -270px;
+
+    justify-content: space-around;
+    align-items: center;
+    transition: margin-top 500ms ease-in-out;
+}
+
+.headerPanelBtn.active {
+    margin-top: 40%;
+}
+
+.headerImg {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.headerImg.active {
+    opacity: 1;
+    transition: opacity 400ms ease-in-out;
+    transition-delay: 200ms;
+}
+
+.headerBtn {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

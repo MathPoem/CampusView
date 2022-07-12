@@ -1,0 +1,21 @@
+.MyBtn {
+    display: flex;
+    position: relative;
+
+    width: 180px;
+    height: 40px;
+    background-color: #d2edf6;
+
+    border-radius: 20px;
+    border-color: transparent;
+
+    justify-content: center;
+    align-items: center;
+
+    font: 20px Bitter;
+    margin: 0;
+}
+
+.MyBtn:hover {
+    background-color: #4b6464;
+}

@@ -1,0 +1,54 @@
+.Logo {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    width: 60px;
+    height: 60px;
+    background-color: black;
+
+    border: 18px solid;
+    border-radius: 30px;
+    border-color: #bedcdd transparent #4b6464 #bedcdd;
+}
+
+.Logo:before {
+    content: "";
+    display: block;
+    position: relative;
+
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border-radius: 7px;
+    top: 14px;
+    left: -4px;
+}
+
+.Logo:after {
+
+    position: relative;
+    display: block;
+    content: 'campus view';
+    font: 35px Bitter;
+
+    width: 240px;
+    height: 30px;
+    color: #4b6464;
+
+    left: 34px;
+    top: -23px;
+
+}
+
+@media screen and (max-width: 1380px) {
+    .Logo:after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Logo {
+        display: none;
+    }
+}
