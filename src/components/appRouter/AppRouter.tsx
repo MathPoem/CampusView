@@ -1,14 +1,33 @@
-import React, {FC} from 'react';
-import {Routes, Route, Navigate} from "react-router-dom";
+import React, {FC, useEffect, useState} from 'react';
+import {Routes, Route, Navigate, useLocation} from "react-router-dom";
 import {privateRoutes, publicRoutes, RouteNames} from "../../router/route";
 import {useAppSelector} from "../../hooks/redux";
+import "../../App.css";
 
 const AppRouter:FC= () => {
+    const location = useLocation();
+
+    const [displayLocation, setDisplayLocation] = useState(location);
+    const [transitionStage, setTransitionStage] = useState("fadeIn");
+
+    useEffect(() => {
+        if (location !== displayLocation) setTransitionStage("fadeOut");
+    }, [location, displayLocation]);
+
+
     const {isAuth} = useAppSelector(state => state.auth);
     return (
-        <div>
+        <div
+            className={`${transitionStage}`}
+            onAnimationEnd={() => {
+                if (transitionStage === "fadeOut") {
+                    setTransitionStage("fadeIn");
+                    setDisplayLocation(location);
+                }
+            }}
+        >
             {isAuth ?
-                <Routes>
+                <Routes location={displayLocation}>
                     {privateRoutes.map(route =>
                         <Route path={route.path}
                                element={<route.element/>}
@@ -20,7 +39,8 @@ const AppRouter:FC= () => {
                     />
                 </Routes>
                 :
-                <Routes>
+                <Routes location={displayLocation}>
+
                     {publicRoutes.map(route =>
                         <Route path={route.path}
                                element={<route.element/>}
