@@ -18,7 +18,7 @@ const HeaderBtn:FC<HeaderBtnProps> = ({imgPath, destination, name}) => {
     return (
         <div className={classes.headerBtn}>
             <img className={`${classes.headerImg} ${location.pathname === "/" && classes.active}`} src={imgPath} alt="view"></img>
-            <MyButton onClick={navigateService}>{name}</MyButton>
+            <MyButton onClick={navigateService} destination={destination}>{name}</MyButton>
         </div>
     );
 };

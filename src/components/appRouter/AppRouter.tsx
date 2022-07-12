@@ -1,8 +1,9 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Routes, Route, Navigate, useLocation} from "react-router-dom";
-import {privateRoutes, publicRoutes, RouteNames} from "../../router/route";
+import {Routes, Route, useLocation} from "react-router-dom";
+import {privateRoutes, publicRoutes,} from "../../router/route";
 import {useAppSelector} from "../../hooks/redux";
 import "../../App.css";
+import ErrorPage from "../../pages/errorPage/errorPage";
 
 const AppRouter:FC= () => {
     const location = useLocation();
@@ -35,12 +36,11 @@ const AppRouter:FC= () => {
                         />
                     )}
                     <Route path={'*'}
-                           element={<Navigate replace to={RouteNames.HOME}/>}
+                           element={<ErrorPage/>}
                     />
                 </Routes>
                 :
                 <Routes location={displayLocation}>
-
                     {publicRoutes.map(route =>
                         <Route path={route.path}
                                element={<route.element/>}
@@ -48,7 +48,7 @@ const AppRouter:FC= () => {
                         />
                     )}
                     <Route path={'*'}
-                           element={<Navigate replace to={RouteNames.HOME}/>}
+                           element={<ErrorPage/>}
                     />
                 </Routes>
             }
