@@ -19,3 +19,9 @@
 .MyBtn:hover {
     background-color: #4b6464;
 }
+
+@media screen and (max-width: 1000px) {
+    .MyBtn {
+        font: 20px Bitter;
+    }
+}
