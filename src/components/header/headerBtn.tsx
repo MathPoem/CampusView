@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import classes from "./header.module.css";
-import MyButton from "../MyButton/MyButton";
+import MyButton from "../UI/MyButton/MyButton";
 import {RouteNames} from "../../router/route";
 import {useLocation, useNavigate} from "react-router-dom";
 import "./header.module.css";

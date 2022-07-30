@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
 
-const ViewPage:FC = () => {
+const ErrorPage:FC = () => {
     return (
         <div>
-            <h1>fail</h1>
+           <h1>404</h1>
         </div>
     );
 };
 
-export default ViewPage;
+export default ErrorPage;

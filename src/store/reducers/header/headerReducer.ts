@@ -2,7 +2,7 @@ import {HeaderAction, HeaderActionsEnum, HeaderState, SetHeaderAction} from "./t
 
 
 const initialState:HeaderState = {
-    isActive: true
+    isActive: false
 }
 
 export default function headerReducer(state = initialState, action: HeaderAction): HeaderState {

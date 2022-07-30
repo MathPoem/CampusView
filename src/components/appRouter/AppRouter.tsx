@@ -15,7 +15,6 @@ const AppRouter:FC= () => {
         if (location !== displayLocation) setTransitionStage("fadeOut");
     }, [location, displayLocation]);
 
-
     const {isAuth} = useAppSelector(state => state.auth);
     return (
         <div
