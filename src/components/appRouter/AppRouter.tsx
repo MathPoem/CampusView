@@ -1,11 +1,12 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Routes, Route, useLocation} from "react-router-dom";
-import {privateRoutes, publicRoutes,} from "../../router/route";
+import {privateRoutes, publicRoutes} from "../../router/route";
 import {useAppSelector} from "../../hooks/redux";
 import "../../App.css";
 import ErrorPage from "../../pages/errorPage/errorPage";
 
-const AppRouter:FC= () => {
+
+const AppRouter: FC = () => {
     const location = useLocation();
 
     const [displayLocation, setDisplayLocation] = useState(location);
@@ -16,6 +17,8 @@ const AppRouter:FC= () => {
     }, [location, displayLocation]);
 
     const {isAuth} = useAppSelector(state => state.auth);
+
+
     return (
         <div
             className={`${transitionStage}`}
@@ -28,15 +31,12 @@ const AppRouter:FC= () => {
         >
             {isAuth ?
                 <Routes location={displayLocation}>
-                    {privateRoutes.map(route =>
-                        <Route path={route.path}
-                               element={<route.element/>}
-                               key={route.path}
-                        />
+                    {privateRoutes.map(route => <Route path={route.path}
+                                                       element={<route.element/>}
+                                                       key={route.path}/>
                     )}
                     <Route path={'*'}
-                           element={<ErrorPage/>}
-                    />
+                           element={<ErrorPage/>}/>
                 </Routes>
                 :
                 <Routes location={displayLocation}>

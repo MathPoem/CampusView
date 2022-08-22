@@ -64,6 +64,12 @@ export const selectSlice = createSlice({
             state.program.id = 0
             state.program.value = ""
         },
+        setProgram(state, action:PayloadAction<number>) {
+            state.program.isOpen = false
+            state.school.isOpen = false
+            state.university.isOpen = false
+            state.program.id = action.payload
+        },
         setValueUniversity(state, action:PayloadAction<string>) {
             state.university.value = action.payload
         },

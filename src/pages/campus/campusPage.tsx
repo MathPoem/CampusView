@@ -12,8 +12,13 @@ const CampusPage: FC = () => {
     return (
             <div className={classes.campusPage} onClick={outClick}>
                 <SelectorField/>
+                <h1>выбери программу</h1>
             </div>
     );
 };
 
 export default CampusPage;
+
+
+
+

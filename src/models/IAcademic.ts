@@ -43,6 +43,7 @@ export interface IProgram {
 
 export interface ICourse {
     id: number
+    name: string
     programID: number
     credits: number
     hoursLecture: number

@@ -24,7 +24,7 @@ const Selector: FC<SelectorProps> = ({placeholder, callback, open, active, setOp
         setOpen(true)
     }
     return (
-        <div>
+        <div className={classes.selector}>
             <input className={`${classes.inputField} ${open && slice && classes.active}`}
                    type="text"
                    placeholder={placeholder}

@@ -4,17 +4,18 @@ import Selector from "./Selector";
 import {useAppDispatch, useAppSelector} from "../../../hooks/redux";
 import {selectSlice} from "../../../store/reducers/selector/selctorReducer";
 import {academicAPI} from "../../../services/AcademicService";
+import {useNavigate} from "react-router-dom";
 
 
 const SelectorField: FC = () => {
+    const navigate = useNavigate()
     const {university, program, school} = useAppSelector(state => state.selector)
     const dispatch = useAppDispatch()
-    const {openUniversity, openSchool, openProgram, setUniversity, setSchool, setValueUniversity, setValueSchool, setValueProgram} = selectSlice.actions
+    const {openUniversity, openSchool, openProgram, setUniversity, setSchool, setProgram,setValueUniversity, setValueSchool, setValueProgram} = selectSlice.actions
 
     const {data:universityList} = academicAPI.useFetchUniversityQuery("")
     const {data:schoolList} = academicAPI.useFetchSchoolQuery(university.id)
     const {data:programList} = academicAPI.useFetchProgramQuery(school.id)
-
 
     const universityCallback = (id:number) => {
         dispatch(setUniversity(id))
@@ -23,6 +24,8 @@ const SelectorField: FC = () => {
         dispatch(setSchool(id))
     }
     const programCallback = (id:number) => {
+        navigate(`/campus/${id}`)
+        dispatch(setProgram(id))
     }
 
     return (

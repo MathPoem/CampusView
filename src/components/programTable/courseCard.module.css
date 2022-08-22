@@ -1,0 +1,17 @@
+.courseCard {
+    width: 80%;
+    height: 60px;
+    font: 16px Bitter;
+}
+
+.footLine {
+    width: auto;
+    height: 6px;
+    background-color: #bedcdd;
+    border-radius: 3px;
+}
+
+.footLine.active {
+    height: 20%;
+    border-radius: 0;
+}

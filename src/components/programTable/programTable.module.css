@@ -1,0 +1,81 @@
+.programTable {
+    margin: 2% auto;
+    width: 99%;
+    height: 700px;
+    /*border: #4b6464 2px solid;*/
+    display: flex;
+}
+
+.navTable {
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    /*border: #4b6464 2px solid;*/
+}
+
+.coursesTable {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    counter-reset: semester-counter;
+}
+
+.descriptionCourse {
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    border-left: #4b6464 1px solid;
+}
+
+.addTable {
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    border: #4b6464 2px solid;
+}
+
+/*style children courseTable*/
+.semesterTable {
+    width: 100%;
+    max-height: 80%;
+    overflow: auto;
+    direction: rtl;
+}
+
+.semesterTable:after,
+.semesterTable:before
+{
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 100;
+}
+
+.semesterTable:after {
+    height: 50px;
+    bottom: 7%;
+    background: linear-gradient(to top, #f4f4f4 20%, transparent 80%);
+}
+
+.semesterTable:before {
+    height: 20px;
+    top: 11%;
+    background: linear-gradient(to bottom, #f4f4f4 20%, transparent 80%);
+}
+
+.semesterTable::-webkit-scrollbar{
+    width: 3px;
+}
+
+.semesterTable::-webkit-scrollbar-track {
+
+    background-color: #bedcdd;
+}
+
+.semesterTable::-webkit-scrollbar-thumb {
+    background-color: #4b6464;
+    border-radius: 2px;
+
+}

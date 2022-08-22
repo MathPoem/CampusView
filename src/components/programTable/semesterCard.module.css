@@ -1,0 +1,43 @@
+.semesterCard {
+    display: flex;
+    direction: ltr;
+}
+
+.navigation {
+    width: 20%;
+    height: auto;
+}
+
+.navigation:Before {
+    display: block;
+    box-sizing: border-box;
+    width: 2px;
+    height: 100%;
+    margin: auto;
+    border: #4b6464 solid 1px;
+    content: "";
+}
+
+.navigation:After {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border: #4b6464 solid 2px;
+    border-radius: 25px;
+    background-color: #f4f4f4;
+    text-align: center;
+    counter-increment: semester-counter;
+    content: counter(semester-counter);
+    padding-top: 10px;
+    font: 20px Bitter;
+    top: -90%;
+}
+
+.courseList {
+    width: 80%;
+    height: auto;
+    margin-top: 5%;
+}
