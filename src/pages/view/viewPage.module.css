@@ -1,3 +1,14 @@
 .viewPage {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 20px Bitter;
+}
 
+.txt > mark {
+    background-color: #bedcdd;
+    font: 24px Bitter;
+    border-radius: 4px;
+    padding: 2px;
 }

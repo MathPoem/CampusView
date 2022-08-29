@@ -5,6 +5,7 @@ import {RouteNames} from "../../router/route";
 import HeaderBtn from "./headerBtn";
 import {useAppSelector} from "../../hooks/redux";
 import {useLocation} from "react-router-dom";
+import UserWindow from "../UI/userWindow/userWindow";
 
 const Header:FC = () => {
     const profImg = require("../../media/prof.png")
@@ -12,9 +13,8 @@ const Header:FC = () => {
     const loginImg = require("../../media/login.png")
     const articleImg = require("../../media/article.png")
 
-    const {isAuth} = useAppSelector(state => state.auth)
-
     const location = useLocation()
+    const {auth} = useAppSelector(state => state)
 
     return (
 
@@ -24,8 +24,9 @@ const Header:FC = () => {
                 <HeaderBtn imgPath={viewImg} name="взгляд" destination={RouteNames.VIEW}/>
                 <HeaderBtn imgPath={articleImg} name="кампус" destination={RouteNames.CAMPUS}/>
                 <HeaderBtn imgPath={profImg} name="лица" destination={RouteNames.FACES}/>
-                <HeaderBtn imgPath={loginImg} name="кабинет" destination={isAuth ? RouteNames.SELF : RouteNames.LOGIN}/>
+                <HeaderBtn imgPath={loginImg} name="оценить" destination={auth.id?RouteNames.ESTIMATE:RouteNames.LOGIN}/>
             </div>
+            <UserWindow/>
         </div>
     );
 };

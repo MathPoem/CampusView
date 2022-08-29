@@ -1,0 +1,105 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 600px;
+    margin: 4% auto;
+    border-top: #4b6464 solid 1px;
+}
+
+.inputRegister {
+    margin: 10px;
+    background-color: white;
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font: 20px Bitter;
+}
+
+.buttonRegister {
+    width: 180px;
+    height: 40px;
+    background-color: #bedcdd;
+    font: 20px Bitter;
+    border: none;
+    outline: none;
+    transition: all ease-in-out 0.2s;
+    margin: 10px;
+    cursor: not-allowed;
+}
+
+.buttonRegister.active {
+    cursor: auto;
+}
+
+.buttonRegister:hover {
+    background-color: #bedcdd;
+}
+
+.buttonRegister.active:hover {
+    background-color: #4b6464;
+}
+
+.txtBlock {
+    width: 60%;
+    text-align: center;
+    margin: 30px;
+}
+
+.register > b {
+    font: 15px Bitter;
+    color: #4b6464;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.register > b:hover {
+    text-decoration: underline;
+    text-decoration-color: #4b6464;
+}
+
+.txtBlock > mark {
+    font: 15px Bitter;
+    background-color: #bedcdd;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+}
+
+.txtImg {
+    margin: 40px;
+    font: 20px Bitter
+}
+
+.txtImg > mark {
+    font: 23px Bitter;
+    background-color: #bedcdd;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.imgBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: img ease-in-out 1s;
+}
+
+@keyframes img {
+    from {
+        top: 100px;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}

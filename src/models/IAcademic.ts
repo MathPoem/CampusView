@@ -44,12 +44,14 @@ export interface IProgram {
 export interface ICourse {
     id: number
     name: string
+    semester: number
     programID: number
     credits: number
     hoursLecture: number
     hoursSeminar: number
     estimationInDiploma: boolean
     exam: boolean
+    test: boolean
     description: string
     url: string
 }

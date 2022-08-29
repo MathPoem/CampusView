@@ -1,16 +1,10 @@
 
-export interface AuthState {
-    isAuth: boolean;
+export interface IUser {
+    id: number
+    username: string
+    email: string
+    university: number
+    program: number
+    token: string
+    confirmed: boolean
 }
-
-export enum AuthActionsEnum {
-    SET_AUTH = "SET_AUTH",
-}
-
-export interface SetAuthAction {
-    type: AuthActionsEnum.SET_AUTH;
-    payload: boolean;
-}
-
-export type AuthAction =
-    SetAuthAction

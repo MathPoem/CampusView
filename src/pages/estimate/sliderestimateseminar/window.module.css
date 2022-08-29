@@ -1,0 +1,48 @@
+.window {
+    position: relative;
+    display: none;
+    min-height: 70px;
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: #bedcdd;
+    z-index: 100;
+    text-align: center;
+}
+
+.window.center {
+    display: block;
+    opacity: 1;
+    z-index: 110;
+    margin-right: -5px;
+    margin-left:  -5px;
+}
+
+.window.edge {
+    display: block;
+    opacity: 0.5;
+    z-index: 100;
+}
+
+.window.right {
+    display: block;
+    opacity: 0.5;
+    z-index: 100;
+}
+
+
+.description {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    width: 140px;
+    height: 100px;
+    top: 240px;
+    left: 50%;
+    background-color: white;
+}
+
+.description.active {
+    display: block;
+}

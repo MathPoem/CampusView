@@ -1,0 +1,36 @@
+.buttonHome {
+    border: none;
+    width: 70%;
+    height: 40px;
+    background-color: #bedcdd;
+    margin: 10px auto;
+    font: 20px Bitter;
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonHome:hover{
+    background-color: rgba(75, 100, 100, 0.91);
+}
+
+.homeVar {
+    height: 80%;
+    width: 80%;
+    border-top: #4b6464 solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.txtBlock {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.txtHomeVar {
+    display: flex;
+}

@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
-import {ICourse, IProgram, ISchool, IUniversity} from "../models/IAcademic";
+import {ICourse, ILecture, IPearson, IProgram, ISchool, ISeminar, IUniversity} from "../models/IAcademic";
 
 
 export const academicAPI = createApi({
@@ -20,28 +20,53 @@ export const academicAPI = createApi({
             })
         }),
         fetchProgram: build.query<IProgram[], number>({
-            query: (id:number) => ({
-                url: `/program${id ? `?schoolId=${id}`: ""}/`,
+            query: (schoolId:number) => ({
+                url: `/program/`,
+                params: {
+                    schoolId: schoolId
+                }
+            })
+        }),
+        fetchProgramById: build.query<IProgram, number|undefined|string>({
+            query: (programId:number) => ({
+                url: `/program/${programId && programId}`,
             })
         }),
         fetchCourse: build.query<ICourse[], number|undefined|string>({
             query: (id:number|undefined|string) => ({
-                url: `/course${id ? `?programID=${id}`: ""}`,
+                url: `/course/`,
+                params: {
+                    programId: id
+                }
             })
         }),
-        fetchPerson: build.query<IProgram[], number>({
+        fetchPerson: build.query<IPearson[], number>({
             query: (id:number) => ({
-                url: `/person${id ? `?departmentID=${id}`: ""}`,
+                url: `/person/`,
+                params: {
+                    departmentId: id
+                }
             })
         }),
-        fetchLecture: build.query<IProgram[], number>({
+        fetchPersonById: build.query<IPearson, number>({
             query: (id:number) => ({
-                url: `lecture${id ? `?programID=${id}`: ""}`,
+                url: `/person/${id}`,
             })
         }),
-        fetchSeminar: build.query<IProgram[], number>({
+        fetchLecture: build.query<ILecture[], number>({
             query: (id:number) => ({
-                url: `/seminar${id ? `?programID=${id}`: ""}`,
+                url: `/lecture/`,
+                params: {
+                    courseId: id
+                }
+            })
+        }),
+        fetchSeminar: build.query<ISeminar[], number>({
+            query: (id:number) => ({
+                url: `/seminar/`,
+                params: {
+                    courseId: id
+                }
             })
         }),
     })

@@ -1,0 +1,40 @@
+.general {
+    width: 100%;
+    height: 80%;
+    font: 22px Bitter;
+    border-top: #4b6464 solid 1px;
+    padding: 5px;
+}
+
+.general > mark {
+    font: 25px Bitter;
+    background-color: #bedcdd;
+    border-radius: 5px;
+    padding: 1px;
+}
+.buttonArea {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLog {
+    border: none;
+    width: 70%;
+    height: 40px;
+    background-color: #bedcdd;
+    margin: 10px;
+    font: 20px Bitter;
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonLog:hover{
+    background-color: rgba(75, 100, 100, 0.91);
+}
+
+.or {
+    font: 18px Bitter;
+}

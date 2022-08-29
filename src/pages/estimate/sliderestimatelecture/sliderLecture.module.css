@@ -1,0 +1,51 @@
+.slider {
+    width: 440px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contentField {
+    display: flex;
+    width: 200px;
+    height: 80px;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.buttonLeft {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-left: #4b6464 solid 5px;
+    border-top: #4b6464 solid 5px;
+    border-bottom: none;
+    border-right: none;
+    background-color: transparent;
+    transform: rotate(-45deg);
+    transition: all ease-in-out 0.1s;
+}
+
+.buttonRight {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-left: #4b6464 solid 5px;
+    border-top: #4b6464 solid 5px;
+    border-bottom: none;
+    border-right: none;
+    background-color: transparent;
+    transform: rotate(135deg);
+    transition: all ease-in-out 0.1s;
+}
+
+.buttonLeft:hover {
+    transform: rotate(-45deg) scale(1.5);
+}
+
+.buttonRight:hover {
+    transform: rotate(135deg) scale(1.5);
+}

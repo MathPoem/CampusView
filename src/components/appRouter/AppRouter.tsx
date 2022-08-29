@@ -16,7 +16,7 @@ const AppRouter: FC = () => {
         if (location !== displayLocation) setTransitionStage("fadeOut");
     }, [location, displayLocation]);
 
-    const {isAuth} = useAppSelector(state => state.auth);
+    const {auth} = useAppSelector(state => state)
 
 
     return (
@@ -29,11 +29,12 @@ const AppRouter: FC = () => {
                 }
             }}
         >
-            {isAuth ?
+            {auth.id ?
                 <Routes location={displayLocation}>
-                    {privateRoutes.map(route => <Route path={route.path}
-                                                       element={<route.element/>}
-                                                       key={route.path}/>
+                    {privateRoutes.map(route =>
+                        <Route path={route.path}
+                               element={<route.element/>}
+                               key={route.path}/>
                     )}
                     <Route path={'*'}
                            element={<ErrorPage/>}/>
