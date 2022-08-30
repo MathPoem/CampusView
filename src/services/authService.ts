@@ -89,7 +89,7 @@ const getEstimateFn = async ({queryApi, fetchFn}:PropsFn) => {
         headers: await prepHeaders({queryApi} as PropsFn) as Headers
     })
     if (result.error) return {error: result.error as FetchBaseQueryError}
-    const data = result.data as EstimateResponse[]
+    const data = result.data as EstimateRequest[]
     return {data}
 }
 
@@ -140,7 +140,7 @@ export const authApi = createApi({
                 return {data: data}
             }
         }),
-        getEstimate: builder.mutation<any, string>({
+        getEstimate: builder.query<any, string>({
             async queryFn(arg, queryApi, extraOptions, fetchFn) {
                 const result = await getEstimateFn({queryApi:queryApi, fetchFn:fetchFn})
                 if (result.error?.status === 401) {
@@ -150,15 +150,15 @@ export const authApi = createApi({
                     }
                     const result = await getEstimateFn({queryApi:queryApi, fetchFn:fetchFn})
                     if (result.error) return {error: result.error as FetchBaseQueryError}
-                    const data = result.data as EstimateResponse[]
+                    const data = result.data as EstimateRequest[]
                     return {data: data}
                 }
                 if (result.error) return {error: result.error as FetchBaseQueryError}
-                const data = result.data as EstimateResponse[]
+                const data = result.data as EstimateRequest[]
                 return {data: data}
             }
         })
     }),
 })
 
-export const { useEstimateMutation, useLogoutMutation, useActivateMutation, useGetEstimateMutation} = authApi
+export const { useEstimateMutation, useLogoutMutation, useActivateMutation, useGetEstimateQuery} = authApi

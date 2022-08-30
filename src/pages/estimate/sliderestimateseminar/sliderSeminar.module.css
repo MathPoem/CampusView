@@ -9,9 +9,10 @@
 
 .contentField {
     display: flex;
-    width: 200px;
+    width: 210px;
     height: 80px;
 
+    align-items: center;
     overflow-x: hidden;
     overflow-y: hidden;
 }

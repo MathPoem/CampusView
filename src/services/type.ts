@@ -7,13 +7,19 @@ export interface EstimateResponse {
 }
 
 export interface EstimateRequest {
+    course_id: number
     lecture_id: number
     seminar_id: number
-    question_1: number
-    question_2: number
-    question_3: number
-    question_4: number
-    question_5: number
+    question_lec_1: number
+    question_lec_2: number
+    question_lec_3: number
+    question_lec_4: number
+    question_lec_5: number
+    question_sem_1: number
+    question_sem_2: number
+    question_sem_3: number
+    question_sem_4: number
+    question_sem_5: number
 }
 
 export interface estimateList {

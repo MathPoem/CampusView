@@ -14,8 +14,6 @@ const CourseCard:FC<courseCardProps> = ({ course, sumHours}) => {
     const widthSeminar = Math.floor(course.hoursSeminar/sumHours*100+4)
 
     const {selectCourse} = useAppSelector(state => state.courseCard)
-    const {} = useAppSelector(state => state)
-
 
     const dispatch = useAppDispatch()
     const {setCourse} = courseCardSlice.actions

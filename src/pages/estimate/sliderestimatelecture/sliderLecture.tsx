@@ -13,7 +13,6 @@ interface SliderProps {
 const SliderLecture: FC<SliderProps> = () => {
     const dispatch = useAppDispatch()
     const {setLecture} = estimateSlice.actions
-    const {estimate} = useAppSelector(state => state)
 
     const {selectCourse} = useAppSelector(state => state.courseCard)
     const {data: lectureList} = academicAPI.useFetchLectureQuery(selectCourse.id)
@@ -32,9 +31,8 @@ const SliderLecture: FC<SliderProps> = () => {
     }
     useEffect(()=>{
         if (lectureList) {dispatch(setLecture(lectureList[0].pearsonID))}
-        }, [lectureList])
+        }, [lectureList, dispatch, setLecture])
 
-    useEffect(()=>{console.log(estimate)}, [estimate])
 
     const clickRight = () => {
         if (selectWindowId === countWindows) {

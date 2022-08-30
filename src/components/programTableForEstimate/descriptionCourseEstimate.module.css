@@ -87,8 +87,33 @@
     border: none;
     outline: none;
     transition: all ease-in-out 0.2s;
+    cursor: not-allowed;
 }
 
 .btn:hover {
+    background-color: #bedcdd;
+}
+
+.btn.active {
+    cursor: auto;
+}
+
+.btn.active:hover {
     background-color: #4b6464;
+}
+
+.alterTxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    font: 20px Bitter;
+}
+
+.alterTxt > mark {
+    background-color: #bedcdd;
+    padding: 2px;
+    font: 22px Bitter;
+    border-radius: 5px;
 }

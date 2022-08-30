@@ -10,11 +10,13 @@ interface windowProps {
 const Window: FC<windowProps> = ({personId, edge}) => {
     const {data: person} = academicAPI.useFetchPersonByIdQuery(personId)
     const [desc, setDesc] = useState(false)
+    const img = require(`../../../media/person/${personId}.jpg`)
 
     return (
         <>
             <div className={`${classes.window} ${edge ? classes.edge : classes.center}`} onMouseOver={()=>setDesc(true)} onMouseOut={()=>{setDesc(false)}}>
-                <h1>{person?.id}</h1>
+                {/*<h1>{person?.id}</h1>*/}
+                <img className={classes.image} src={img} alt={`${personId}`}/>
             </div>
             <div className={`${classes.description} ${(desc && !edge) && classes.active}`}>
                 <div>{person?.secondName}</div>

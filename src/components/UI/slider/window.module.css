@@ -12,6 +12,11 @@
 }
 
 .window.center {
+    min-height: 80px;
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
     display: block;
     opacity: 1;
     z-index: 110;
@@ -29,4 +34,26 @@
     display: block;
     opacity: 0.5;
     z-index: 100;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.description {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    width: 140px;
+    height: 100px;
+    top: 45%;
+    left: 60%;
+    background-color: white;
+    z-index: 400;
+}
+
+.description.active {
+    display: block;
 }

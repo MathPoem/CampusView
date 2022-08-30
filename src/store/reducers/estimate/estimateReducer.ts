@@ -1,6 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export interface EstimateState {
+    course_id:number
     lecture_id: number
     seminar_id: number
     question_lec_1: number
@@ -16,6 +17,7 @@ export interface EstimateState {
 }
 
 const initialState:EstimateState = {
+    course_id: 0,
     seminar_id: 0,
     lecture_id: 0,
     question_lec_1: 0,
@@ -70,6 +72,9 @@ export const estimateSlice = createSlice({
         },
         setSeminar(state, action:PayloadAction<number>) {
             state.seminar_id = action.payload
+        },
+        setCourse(state, action:PayloadAction<number>) {
+            state.course_id = action.payload
         }
     }
 })
