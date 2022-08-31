@@ -10,7 +10,7 @@ interface windowProps {
 const Window: FC<windowProps> = ({personId, edge}) => {
     const {data: person} = academicAPI.useFetchPersonByIdQuery(personId)
     const [desc, setDesc] = useState(false)
-    const img = require(`../../../media/person/${personId}.jpg`)
+    const img = `../../../media/person/${personId}.jpg`
 
     return (
         <>

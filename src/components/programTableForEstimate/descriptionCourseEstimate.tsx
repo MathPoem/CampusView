@@ -25,7 +25,7 @@ const DescriptionCourseEstimate: FC = () => {
     }
 
     useEffect(()=>{
-        dispatch(setCourse(selectCourse.id))}, [selectCourse.id])
+        dispatch(setCourse(selectCourse.id))}, [selectCourse.id, dispatch, setCourse])
 
     console.log(res, estimateState)
 
